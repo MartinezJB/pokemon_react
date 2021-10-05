@@ -1,0 +1,42 @@
+.enemyContainer {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.enemyImg {
+    width: 30%;
+    margin-left: 12%;
+}
+
+.enemyContainerInfo {
+    background-color: rgba(120, 120, 120, 1);
+    width: 45%;
+    padding: 5px;
+    height: max-content;
+    border-radius: 0 5px 5px 0;
+}
+
+.enemyInfo {
+    display: flex;
+    justify-content:space-between;
+}
+
+.enemyHealt {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.enemyHealtBar {
+    width: 60%;
+    margin-right: 5px;
+}
+
+.enemyHp {
+    margin-right: 5px;
+    font-size: small;
+}
