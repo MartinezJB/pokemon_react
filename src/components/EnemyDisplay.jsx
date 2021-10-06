@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/EnemyDisplay.module.css'
+import styles from './styles/EnemyDisplay.module.css';
 export default function EnemyDisplay() {
     return (
         <div className={styles.enemyContainer}>

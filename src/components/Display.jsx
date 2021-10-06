@@ -5,7 +5,7 @@ import TextDisplay from './TextDisplay'
 
 export default function Display() {
     return (
-        <div>
+        <div className="display">
             <EnemyDisplay />
             <PlayerDisplay />
             <TextDisplay />

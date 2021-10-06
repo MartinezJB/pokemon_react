@@ -1,20 +1,30 @@
-import React from 'react'
+import React from 'react';
+import Move from './Move';
+import styles from './styles/Keyboard.module.css'
 
 export default function Keyboard() {
     return (
-        <div>
-            <table className="botones">
-                <tbody>
-                    <tr>
-                        <td id="ATAQUE1">ATAQUE1</td>
-                        <td id="ATAQUE2">ATAQUE2</td>
-                    </tr>
+        <div className={styles.keyboardContainer}>
+            <table className={styles.buttonsContainer}>
+            <tbody>
+                <tr>
+                    <td id="ATAQUE1">
+                        <Move moveName="Move name" type="type" pp="22/22" />
+                    </td>
+                    <td id="ATAQUE2">
+                        <Move moveName="Move name" type="type" pp="22/22" />
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td id="ATAQUE3">ATAQUE3</td>
-                        <td id="ATAQUE4">ATAQUE4</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td id="ATAQUE3">
+                        <Move moveName="Move name" type="type" pp="22/22" />
+                    </td>
+                    <td id="ATAQUE4">
+                        <Move moveName="Move name" type="type" pp="22/22" />
+                    </td>
+                </tr>
+            </tbody>
             </table>
             <div className="buttons">
                 <button>Exit</button>
