@@ -4,7 +4,10 @@ export default function EnemyDisplay() {
     return (
         <div className={styles.enemyContainer}>
 
-            <img className={styles.enemyImg} id="pokemon-rival" name="Sceptile" src="./blastoise.gif" alt="rival" />
+            <div className={styles.imageContainer}>
+                <img className={styles.enemyImg} id="pokemon-rival" name="Sceptile" src="./blastoise.gif" alt="rival" />
+                <div className={styles.enemyPlatform}></div>
+            </div>
 
             <div className={styles.enemyContainerInfo}>
                 <div className={styles.enemyInfo}>

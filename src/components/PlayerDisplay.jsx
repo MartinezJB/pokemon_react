@@ -5,7 +5,10 @@ export default function PlayerDisplay() {
     return (
         <div className={styles.playerContainer}>
 
-            <img className={styles.playerImg} src="./torchic.gif" alt="blastoise de jugador" />
+            <div className={styles.imageContainer}>
+                <img className={styles.playerImg} src="./charizard.gif" alt="blastoise de jugador" />
+                <div className={styles.playerPlatform}></div>
+            </div>
 
             <div className={styles.playerContainerInfo}>
                 <div className={styles.playerInfo}>

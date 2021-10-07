@@ -1,5 +1,6 @@
 .enemyContainer {
-    margin-top: 10px;
+    position: relative;
+    top: 10px;
     width: 100%;
     display: flex;
     align-items:flex-start;
@@ -7,9 +8,26 @@
     flex-direction: row-reverse;
 }
 
-.enemyImg {
+.imageContainer {
     width: 30%;
     margin-left: 12%;
+}
+
+.enemyImg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.enemyPlatform {
+    position: absolute;
+    top: 62%;
+    right: 3%;
+    width: 40%;
+    height: 40%;
+    border-radius: 100%;
+    border: 5px solid #9FA8AD;
+    background-color: #D4DDDA;
 }
 
 .enemyContainerInfo {
