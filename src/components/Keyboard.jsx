@@ -5,7 +5,7 @@ import styles from './styles/Keyboard.module.css'
 export default function Keyboard() {
     return (
         <div className={styles.keyboardContainer}>
-            <table className={styles.buttonsContainer}>
+            <table className={styles.movesContainer}>
             <tbody>
                 <tr>
                     <td id="ATAQUE1">
@@ -26,10 +26,10 @@ export default function Keyboard() {
                 </tr>
             </tbody>
             </table>
-            <div className="buttons">
-                <button>Exit</button>
-                <button>+</button>
-                <button>Bag</button>
+            <div className={styles.buttonsContainer}>
+                <button className={styles.exit}>Exit</button>
+                <button className={styles.more}>+</button>
+                <button className={styles.bag}>Bag</button>
             </div>
         </div>
     )
