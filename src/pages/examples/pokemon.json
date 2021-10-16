@@ -1,0 +1,76 @@
+[
+{
+    "name" : "Blastoise",
+    "lvl" : 56,
+    "max_life" : "170",
+    "actual_life" : 170,
+    "urlImg" : "./blastoise.gif",
+    "movements" : [
+        {
+            "name" : "Water gun",
+            "type" : "WATER",
+            "damage" : 50,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        },
+        {
+            "name" : "Mega kick",
+            "type" : "NORMAL",
+            "damage" : 40,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        },
+        {
+            "name" : "Surf",
+            "type" : "WATER",
+            "damage" : 60,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        },
+        {
+            "name" : "Splash",
+            "type" : "WATER",
+            "damage" : 50,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        }
+    ]
+},
+{
+    "name" : "Charizard",
+    "lvl" : 57,
+    "max_life" : "150",
+    "actual_life" : 150,
+    "urlImg" : "./charizard.gif",
+    "movements" : [
+        {
+            "name" : "Flamethrower",
+            "type" : "FIRE",
+            "damage" : 50,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        },
+        {
+            "name" : "Steel tail",
+            "type" : "STEEL",
+            "damage" : 40,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        },
+        {
+            "name" : "Mega punch",
+            "type" : "NORMAL",
+            "damage" : 40,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        },
+        {
+            "name" : "Tornado wings",
+            "type" : "FLYING",
+            "damage" : 50,
+            "max_pp" : 25,
+            "actual_pp" : 25
+        }
+    ]
+}
+]

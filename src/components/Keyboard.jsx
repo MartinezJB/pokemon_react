@@ -2,26 +2,29 @@ import React from 'react';
 import Move from './Move';
 import styles from './styles/Keyboard.module.css'
 
-export default function Keyboard() {
+export default function Keyboard({ playerMovement }) {
+    /*
+        Esta tabla puede cambiar a una GRID list para facilitar el mapeo de los movimientos con su componente
+    */
     return (
         <div className={styles.keyboardContainer}>
             <table className={styles.movesContainer}>
             <tbody>
                 <tr>
                     <td id="ATAQUE1">
-                        <Move moveName="Move name" type="type" pp="22/22" />
+                        <Move move={playerMovement[0]}/>
                     </td>
                     <td id="ATAQUE2">
-                        <Move moveName="Move name" type="type" pp="22/22" />
+                    <Move move={playerMovement[1]}/>
                     </td>
                 </tr>
 
                 <tr>
                     <td id="ATAQUE3">
-                        <Move moveName="Move name" type="type" pp="22/22" />
+                        <Move move={playerMovement[2]}/>
                     </td>
                     <td id="ATAQUE4">
-                        <Move moveName="Move name" type="type" pp="22/22" />
+                        <Move move={playerMovement[3]}/>
                     </td>
                 </tr>
             </tbody>

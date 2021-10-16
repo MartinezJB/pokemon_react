@@ -1,23 +1,25 @@
 import React from 'react';
 import styles from './styles/EnemyDisplay.module.css';
-export default function EnemyDisplay() {
+export default function EnemyDisplay({ enemy }) {
+    let { name, lvl, max_life, actual_life, urlImg } = enemy;
+
     return (
         <div className={styles.enemyContainer}>
 
             <div className={styles.imageContainer}>
-                <img className={styles.enemyImg} id="pokemon-rival" name="Sceptile" src="./blastoise.gif" alt="rival" />
+                <img className={styles.enemyImg} id="pokemon-rival" src={urlImg} alt={name} />
                 <div className={styles.enemyPlatform}></div>
             </div>
 
             <div className={styles.enemyContainerInfo}>
                 <div className={styles.enemyInfo}>
-                    <p className="nombreEnemigo" id="nombrePokeRival">Blastoise</p>
-                    <p className="nivelRival" id="nivelRival">lvl 55</p>
+                    <p className="nombreEnemigo" id="nombrePokeRival">{name}</p>
+                    <p className="nivelRival" id="nivelRival">lvl {lvl}</p>
                 </div>
 
                 <div className={styles.enemyHealt}>
                     <label className={styles.enemyHp} htmlFor="vidaRival">HP</label>
-                    <progress className={styles.enemyHealtBar} id="vidaRival" max="100" min="0" value="90"></progress>
+                    <progress className={styles.enemyHealtBar} id="vidaRival" min="0" max={max_life} value={actual_life}></progress>
                 </div>
             </div>
         </div>
