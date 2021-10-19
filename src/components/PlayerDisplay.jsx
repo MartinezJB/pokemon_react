@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/PlayerDisplay.module.css'
+import styles from './styles/PlayerDisplay.module.css';
 
 export default function PlayerDisplay({ player }) {
     let { name, lvl, max_life, actual_life, urlImg } = player;

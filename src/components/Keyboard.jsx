@@ -2,10 +2,11 @@ import React from 'react';
 import Move from './Move';
 import styles from './styles/Keyboard.module.css'
 
-export default function Keyboard({ playerMovement }) {
+export default function Keyboard({ player, playerMovement }) {
     /*
         Esta tabla puede cambiar a una GRID list para facilitar el mapeo de los movimientos con su componente
     */
+   
     return (
         <div className={styles.keyboardContainer}>
             <table className={styles.movesContainer}>
