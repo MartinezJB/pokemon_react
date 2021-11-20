@@ -1,19 +1,21 @@
 export class Movement {
+    static id = 0;
     constructor(name, type, damage, pp) {
         this.name = name;
         this.type = type;
         this.damage = damage;
         this.max_pp = pp;
         this.actual_pp = pp;
+        this.id = Movement.id ++
     }
 
     harmTo(enemy) {
-        if(enemy.type.isWeakAgainst(this.tipo)){
-            return this.danio * 1.15;
-        }else if(enemy.tipo.esFuerteContra(this.tipo)){
-            return this.danio * 0.60;
+        if(enemy.type.isWeakAgainst(this.type)){
+            return this.damage * 1.15;
+        }else if(enemy.type.isStrongAgainst(this.type)){
+            return this.damage * 0.60;
         }else{
-            return this.danio;
+            return this.damage;
         }
     }
 }

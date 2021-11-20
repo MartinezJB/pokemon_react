@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles/PlayerDisplay.module.css';
 
 export default function PlayerDisplay({ player }) {
-    let { name, lvl, max_life, actual_life, urlImg } = player;
+
+    const [name, setName] = useState(player.name);
+    const [lvl, setLvl] = useState(player.lvl);
+    const [max_life, setMax_life] = useState(player.max_life);
+    const [actual_life, setActual_Life] = useState(player.actual_life);
+    const [urlImg, setUrlImg] = useState(player.urlImg);
+
+    useEffect( ()=> {
+        setName(player.name);
+        setLvl(player.lvl);
+        setMax_life(player.max_life);
+        setActual_Life(player.actual_life);
+        setUrlImg(player.urlImg);
+        console.log("roto")
+    })
 
     return (
         <div className={styles.playerContainer}>

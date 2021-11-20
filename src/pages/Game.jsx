@@ -2,18 +2,24 @@ import React, { Fragment } from 'react'
 import Display from '../components/Display'
 import Keyboard from '../components/Keyboard'
 import { usePokemon } from '../hooks/usePokemon'
-
-import pokemon from './examples/pokemon.json'
+import { useMove } from '../hooks/useMove'
 
 
 export default function Game() {
 
-    const pokek = usePokemon("charizard", "fire", 150, 50, 40, [], "./charizard.gif", 59)
-
+    const playerMovements = [
+        useMove("Flamethrower", "fire", 50, 25),
+        useMove("Steel tail", "steel", 50, 15),
+        useMove("Mega punch", "normal", 50, 10),
+        useMove("Tornado wings", "flying", 50, 30)
+    ]
+    const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard.gif", 59)
+    const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40, [], "./blastoise.gif", 59)
+    console.log(enemyPokemon)
     return (
         <Fragment>
-            <Display enemy={pokemon[0]} player={pokek} />
-            <Keyboard player={pokek} playerMovement={pokemon[1].movements} />
+            <Display enemy={enemyPokemon} player={playerPokemon} />
+            <Keyboard player={playerPokemon} enemy={enemyPokemon}/>
         </Fragment>
     )
 }

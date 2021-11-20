@@ -11,8 +11,13 @@
                 inset -2px -2px 5px #E87A7B;
 }
 
-td {
-    padding: 10px;
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+li{
+    margin: 1rem;
 }
 
 .buttonsContainer {

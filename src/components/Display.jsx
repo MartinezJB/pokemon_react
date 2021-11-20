@@ -6,6 +6,7 @@ import styles from './styles/Display.module.css';
 
 
 export default function Display({ enemy, player }) {
+    
     return (
         <div className={styles.display}>
             <EnemyDisplay enemy={enemy} />

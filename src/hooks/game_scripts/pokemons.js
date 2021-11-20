@@ -1,9 +1,9 @@
 export class Pokemon {
-    constructor(name, type, hp, damagePoints, defensePoints, movements, image, lvl = 1){
+    constructor(name, type, hp, damagePoints, defensePoints, movements = [], image, lvl = 1){
         this.name = name;
         this.type = type;
         this.max_life = hp;
-        this.actual_life = hp;
+        this.actual_life = this.max_life;
         this.urlImg = image;
         this.damagePoints = damagePoints;
         this.defensePoints = defensePoints;
