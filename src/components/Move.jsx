@@ -1,12 +1,11 @@
 import React from "react";
 import styles from './styles/Move.module.css';
 
-export default function Move({ player, enemy, move }) {
+export default function Move({ player, enemy, move, gameOver, setTurnDone }) {
 
   const attack = () => {
-    console.log(enemy)
     player.attackEnemy(enemy, move)
-    console.log("atacar con " + move.name)
+    setTurnDone(true)
   }
   
   return (

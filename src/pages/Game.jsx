@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Display from '../components/Display'
 import Keyboard from '../components/Keyboard'
 import { usePokemon } from '../hooks/usePokemon'
@@ -13,13 +13,20 @@ export default function Game() {
         useMove("Mega punch", "normal", 50, 10),
         useMove("Tornado wings", "flying", 50, 30)
     ]
+
     const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard.gif", 59)
     const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40, [], "./blastoise.gif", 59)
-    console.log(enemyPokemon)
+
+    const [gameOver, setGameOver] = useState(false);
+    const [turnDone, setTurnDone] = useState(false);
+
+
     return (
         <Fragment>
-            <Display enemy={enemyPokemon} player={playerPokemon} />
-            <Keyboard player={playerPokemon} enemy={enemyPokemon}/>
+            <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver}  />
+            <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} />
+            <button onClick={() => console.log(playerPokemon)}>Mostrar player</button>
+            <button onClick={() => console.log(enemyPokemon)}>Mostrar enemigo</button>
         </Fragment>
     )
 }
