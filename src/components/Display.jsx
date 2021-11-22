@@ -5,13 +5,12 @@ import TextDisplay from './TextDisplay';
 import styles from './styles/Display.module.css';
 
 
-export default function Display({ enemy, player }) {
-    
+export default function Display({ enemy, player, message }) {
     return (
         <div className={styles.display}>
             <EnemyDisplay enemy={enemy} />
             <PlayerDisplay player={player} />
-            <TextDisplay />
+            <TextDisplay mensaje={message} />
         </div>
     )
 }

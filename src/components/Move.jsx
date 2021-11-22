@@ -1,9 +1,10 @@
 import React from "react";
 import styles from './styles/Move.module.css';
 
-export default function Move({ player, enemy, move, gameOver, setTurnDone }) {
+export default function Move({ player, enemy, move, gameOver, setTurnDone, setMoveName }) {
 
   const attack = () => {
+    setMoveName(move.name)
     player.attackEnemy(enemy, move)
     setTurnDone(true)
   }

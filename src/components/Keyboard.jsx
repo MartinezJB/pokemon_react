@@ -3,25 +3,28 @@ import CoveredButtons from './CoveredButtons';
 import Move from './Move';
 import styles from './styles/Keyboard.module.css'
 
-export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDone}) {
-    /*
-        Esta tabla puede cambiar a una GRID list para facilitar el mapeo de los movimientos con su componente
-    */
+export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDone, setMessage}) {
+
    const [covered, setCovered] = useState(false)
+   const [moveName, setMoveName] = useState("")
    
     useEffect (()=>{
+
         if(turnDone){
-            const startTimming = setTimeout(()=>{
+            setTimeout(()=>{
                 setCovered(true)
+                setMessage(`${player.name} usó ${moveName}`)
                 console.log("en timming")
-                const stopTimming = setTimeout(()=> {
+                setTimeout(()=> {
                     setCovered(false)
                     setTurnDone(false)
+                    setMessage(`¿Qué hará ${player.name}?`)
                     console.log("en stop timming")
                 },3000)
             }, 100)
         }
-    },[turnDone])
+        
+    },[turnDone, setTurnDone, setMoveName])
   
     return (
         <Fragment>
@@ -30,7 +33,7 @@ export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDon
             <ul className={styles.movesContainer}>
                 {player.movements.map((move)=>(
                     <li key={move.id}>
-                        <Move move={move} player={player} enemy={enemy} gameOver={gameOver} setTurnDone={setTurnDone} />
+                        <Move move={move} player={player} enemy={enemy} gameOver={gameOver} setTurnDone={setTurnDone} setMoveName={setMoveName} />
                     </li>
                 ))}
             </ul>
@@ -41,7 +44,7 @@ export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDon
                 <button className={styles.bag}>Bag</button>
             </div>
         </div>
-        <CoveredButtons covered={covered} />
+        <CoveredButtons covered={covered} setCovered={setCovered} setMessage={setMessage} player={player} />
         </Fragment>
     )
 }
