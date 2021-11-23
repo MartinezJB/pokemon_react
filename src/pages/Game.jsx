@@ -14,8 +14,15 @@ export default function Game() {
         useMove("Tornado wings", "flying", 50, 30)
     ]
 
+    const enemyMovements = [
+        useMove("Hidro bomb", "water", 50, 25),
+        useMove("Tail", "normal", 50, 15),
+        useMove("Mega punch", "normal", 50, 10),
+        useMove("Water gun", "water", 50, 30)
+    ]
+
     const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard.gif", 59)
-    const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40, [], "./blastoise.gif", 59)
+    const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise.gif", 59)
 
     const [message, setMessage] = useState(`¿Qué hará ${playerPokemon.name}?`)
 
@@ -26,7 +33,7 @@ export default function Game() {
     return (
         <Fragment>
             <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} />
-            <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} />
+            <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} />
             <button onClick={() => console.log(playerPokemon)}>Mostrar player</button>
             <button onClick={() => console.log(enemyPokemon)}>Mostrar enemigo</button>
         </Fragment>

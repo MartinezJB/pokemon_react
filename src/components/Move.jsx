@@ -1,16 +1,10 @@
 import React from "react";
 import styles from './styles/Move.module.css';
 
-export default function Move({ player, enemy, move, gameOver, setTurnDone, setMoveName }) {
-
-  const attack = () => {
-    setMoveName(move.name)
-    player.attackEnemy(enemy, move)
-    setTurnDone(true)
-  }
+export default function Move({ move, setTurnDone, setMove }) {
   
   return (
-    <div className={styles.button} onClick={attack}>
+    <div className={styles.button} onClick={()=>{setMove(move); setTurnDone(true)}}>
 
         <h3 className={styles.moveName}>{move.name}</h3>
         

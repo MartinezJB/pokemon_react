@@ -3,28 +3,45 @@ import CoveredButtons from './CoveredButtons';
 import Move from './Move';
 import styles from './styles/Keyboard.module.css'
 
-export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDone, setMessage}) {
+export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDone, setTurnDone, setMessage}) {
 
    const [covered, setCovered] = useState(false)
-   const [moveName, setMoveName] = useState("")
-   
+   const [move, setMove] = useState({})
+
+   const finishTurn = () => {
+        setCovered(false)
+        setTurnDone(false)
+        setMessage(`¿Qué hará ${player.name}?`)
+   }
+  
     useEffect (()=>{
 
         if(turnDone){
-            setTimeout(()=>{
-                setCovered(true)
-                setMessage(`${player.name} usó ${moveName}`)
-                console.log("en timming")
-                setTimeout(()=> {
-                    setCovered(false)
-                    setTurnDone(false)
-                    setMessage(`¿Qué hará ${player.name}?`)
-                    console.log("en stop timming")
-                },3000)
-            }, 100)
+
+            setCovered(true)
+            setMessage(`${player.name} usó ${move.name}`)
+
+            if(enemy.actual_life > 0 && player.actual_life > 0){
+                setTimeout(()=>{
+                    
+                    setMessage(`${player.attackEnemy(enemy, move)}`)
+                    //TODO: pokemon rival necesita devolver el ataque
+                    //console.log("en timming")
+                    
+                    setTimeout(()=> {
+                        if(enemy.actual_life > 0 && player.actual_life > 0)
+                            finishTurn()
+                        else{
+                            setMessage(`${player.name} Ganó`)
+                            setGameOver(true)
+                        }
+                        //console.log("en stop timming")
+                    },3000)
+                }, 2000)
+            }
         }
         
-    },[turnDone, setTurnDone, setMoveName])
+    },[turnDone, setTurnDone, setMove])
   
     return (
         <Fragment>
@@ -33,7 +50,7 @@ export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDon
             <ul className={styles.movesContainer}>
                 {player.movements.map((move)=>(
                     <li key={move.id}>
-                        <Move move={move} player={player} enemy={enemy} gameOver={gameOver} setTurnDone={setTurnDone} setMoveName={setMoveName} />
+                        <Move move={move} setTurnDone={setTurnDone} setMove={setMove} />
                     </li>
                 ))}
             </ul>
@@ -44,7 +61,7 @@ export default function Keyboard({ player, enemy, gameOver, turnDone, setTurnDon
                 <button className={styles.bag}>Bag</button>
             </div>
         </div>
-        <CoveredButtons covered={covered} setCovered={setCovered} setMessage={setMessage} player={player} />
+        <CoveredButtons covered={covered}/>
         </Fragment>
     )
 }
