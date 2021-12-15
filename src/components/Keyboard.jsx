@@ -5,43 +5,51 @@ import styles from './styles/Keyboard.module.css'
 
 export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDone, setTurnDone, setMessage}) {
 
-   const [covered, setCovered] = useState(false)
-   const [move, setMove] = useState({})
+    const [covered, setCovered] = useState(false)
+    const [move, setMove] = useState({})
 
-   const finishTurn = () => {
-        setCovered(false)
-        setTurnDone(false)
-        setMessage(`¿Qué hará ${player.name}?`)
-   }
+    const finishTurn = () => {
+        if(enemy.actual_life > 0 && player.actual_life > 0){
+            setCovered(false) //ambos tienen vida, sigue el juego
+            setTurnDone(false)
+            setMessage(`¿Qué hará ${player.name}?`)}
+        else if(enemy.actual_life < 1){
+            setMessage(`${player.name} Ganó`) //gana player
+            setGameOver(true)
+        }
+        else{
+            setMessage(`${enemy.name} Ganó`) //gana enemy
+            setGameOver(true)
+        }
+    }
+
+    const playerAttack = () => {
+        setMessage(`${player.name} usó ${move.name}`);
+
+        setTimeout(()=>{
+            setMessage(`${player.attackEnemy(enemy, move)}`)
+        }, 2000)
+    }
+    const enemyAttack = () => {
+        setMessage(`${enemy.name} usó ${move.name}`); //TODO: hacer que el enemigo haga un ataque aleatorio
+
+        setTimeout(()=>{
+            setMessage(`${enemy.attackEnemy(player, move)}`)
+        }, 2000)
+    }
   
     useEffect (()=>{
-
+        console.log("roto")
         if(turnDone){
+            setCovered(true);
 
-            setCovered(true)
-            setMessage(`${player.name} usó ${move.name}`)
-
-            if(enemy.actual_life > 0 && player.actual_life > 0){
-                setTimeout(()=>{
-                    
-                    setMessage(`${player.attackEnemy(enemy, move)}`)
-                    //TODO: pokemon rival necesita devolver el ataque
-                    //console.log("en timming")
-                    
-                    setTimeout(()=> {
-                        if(enemy.actual_life > 0 && player.actual_life > 0)
-                            finishTurn()
-                        else{
-                            setMessage(`${player.name} Ganó`)
-                            setGameOver(true)
-                        }
-                        //console.log("en stop timming")
-                    },3000)
-                }, 2000)
-            }
+            //TODO: rehacer el sistema por turnos
+            playerAttack()
+            enemyAttack();
+            finishTurn();
         }
         
-    },[turnDone, setTurnDone, setMove])
+    },[turnDone])
   
     return (
         <Fragment>
