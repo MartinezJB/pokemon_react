@@ -9,43 +9,49 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
     const [move, setMove] = useState({})
 
     const finishTurn = () => {
-        if(enemy.actual_life > 0 && player.actual_life > 0){
-            setCovered(false) //ambos tienen vida, sigue el juego
-            setTurnDone(false)
-            setMessage(`¿Qué hará ${player.name}?`)}
-        else if(enemy.actual_life < 1){
-            setMessage(`${player.name} Ganó`) //gana player
-            setGameOver(true)
+        return new Promise ((res, rej) => {
+            setTimeout(()=>{
+                if(enemy.actual_life > 0 && player.actual_life > 0){
+                    setCovered(false) //ambos tienen vida, sigue el juego
+                    setTurnDone(false)
+                    setMessage(`¿Qué hará ${player.name}?`)}
+                else if(enemy.actual_life < 1){
+                    setMessage(`${player.name} Ganó`) //gana player
+                    setGameOver(true)
+                }
+                else{
+                    setMessage(`${enemy.name} Ganó`) //gana enemy
+                    setGameOver(true)
+                }
+            }, 2000)
+        })
+        
+    }
+
+    const attack = (attacker, victim, delay) => {
+        if(attacker.actual_life < 1 || victim.actual_life < 1) {
+            return null
         }
-        else{
-            setMessage(`${enemy.name} Ganó`) //gana enemy
-            setGameOver(true)
-        }
+        return new Promise ( (res, rej) => {
+            setTimeout(()=>{
+                setMessage(`${attacker.name} usó ${move.name}`);
+    
+                setTimeout(()=>{
+                    res(setMessage(`${attacker.attackEnemy(victim, move)}`))
+                }, 2000)
+            }, delay)
+        
+        })
     }
-
-    const playerAttack = () => {
-        setMessage(`${player.name} usó ${move.name}`);
-
-        setTimeout(()=>{
-            setMessage(`${player.attackEnemy(enemy, move)}`)
-        }, 2000)
-    }
-    const enemyAttack = () => {
-        setMessage(`${enemy.name} usó ${move.name}`); //TODO: hacer que el enemigo haga un ataque aleatorio
-
-        setTimeout(()=>{
-            setMessage(`${enemy.attackEnemy(player, move)}`)
-        }, 2000)
-    }
+    //TODO: hacer que el enemigo haga un ataque aleatorio, esto en el codigo del enemigo
   
-    useEffect (()=>{
+    useEffect (async ()=>{
         console.log("roto")
         if(turnDone){
+            // console.log("dentro del if")
             setCovered(true);
-
-            //TODO: rehacer el sistema por turnos
-            playerAttack()
-            enemyAttack();
+            await attack(player, enemy, 0);
+            await attack(enemy, player, 2000);
             finishTurn();
         }
         
