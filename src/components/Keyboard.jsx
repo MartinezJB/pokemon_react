@@ -58,7 +58,7 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
     },[turnDone])
   
     return (
-        <Fragment>
+        <div className='h-2/5'>
         <div className={styles.keyboardContainer}>
             
             <ul className={styles.movesContainer}>
@@ -76,6 +76,6 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
             </div>
         </div>
         <CoveredButtons covered={covered}/>
-        </Fragment>
+        </div>
     )
 }

@@ -34,8 +34,6 @@ export default function Game() {
         <Fragment>
             <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} />
             <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} />
-            <h1 className='text-3xl font-bold underline'>Hola mundo</h1>
-            <button onClick={() => console.log(enemyPokemon)}>Mostrar enemigo</button>
         </Fragment>
     )
 }

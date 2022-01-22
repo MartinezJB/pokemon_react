@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     align-items:flex-start;
-    justify-content: flex-end;
+    justify-content: space-around;
     flex-direction: row-reverse;
 }
 
