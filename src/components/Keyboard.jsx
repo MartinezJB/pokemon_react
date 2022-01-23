@@ -46,7 +46,7 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
     //TODO: hacer que el enemigo haga un ataque aleatorio, esto en el codigo del enemigo
   
     useEffect (async ()=>{
-        console.log("roto")
+        //console.log("roto")
         if(turnDone){
             // console.log("dentro del if")
             setCovered(true);

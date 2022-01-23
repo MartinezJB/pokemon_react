@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       boxShadow: {
         'border':
-        'inset 2px 2px 2px #AEB49E, inset -2px -2px 2px #AEB49E, inset -2px 2px 2px #AEB49E, inset 2px -2px 2px #AEB49E, 2px 2px 2px #E6F4E1, -2px -2px 2px #E6F4E1, -2px 2px 2px #E6F4E1, 2px -2px 2px #E6F4E1'
+        'inset 2px 2px 2px #AEB49E, inset -2px -2px 2px #AEB49E, inset -2px 2px 2px #AEB49E, inset 2px -2px 2px #AEB49E, 2px 2px 2px #E6F4E1, -2px -2px 2px #E6F4E1, -2px 2px 2px #E6F4E1, 2px -2px 2px #E6F4E1',
+        'txtcontainer': '1rem 0 rgb(15 23 42), -1rem 0 rgb(15 23 42)'        
       },
       keyframes: {
         bounce: {
