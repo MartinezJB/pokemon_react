@@ -5,17 +5,17 @@ export default function EnemyDisplay({ enemy }) {
     let { name, lvl, max_life, actual_life, urlImg } = enemy;
 
     return (
-        <div className="relative flex flex-row-reverse top-3 items-start justify-around">
+        <div className="relative flex flex-row-reverse top-3 items-start justify-between">
             {/* Image */}
-            <div className="w-5/12">
+            <div className="w-5/12 scale-90 mx-auto">
                 {/* Sprite */}
-                <img className="relative w-full z-10 animate-bounce" src={urlImg} alt={name} /> {/* translate-y-[-15%] agregar esta clase si se desactivan las animaciones*/}
+                <img className="relative w-full z-10 animate-bounce" src={urlImg} alt={name} />
                 {/* Platform */}
-                <div className="absolute bottom-0 w-5/12 h-5/6 scale-y-50 bg-slate-200 border-slate-400 border-4 rounded-full "></div>
+                <div className="absolute bottom-0 w-full h-3/6 bg-slate-200 border-slate-400 border-4 rounded-[100%]"></div>
             </div>
 
             {/* Info */}
-            <div className="w-5/12 bg-stone-500 px-2 py-1 border-slate-800 border-2 rounded-r-lg shadow-inner">
+            <div className="w-6/12 bg-stone-500 px-2 py-1 border-slate-800 border-2 rounded-r-lg shadow-border">
                 <div className="flex justify-between text-lg">
                     {/* Name */}
                     <p>{name}</p>
