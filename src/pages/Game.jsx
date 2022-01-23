@@ -20,9 +20,9 @@ export default function Game() {
         useMove("Mega punch", "normal", 50, 10),
         useMove("Water gun", "water", 50, 30)
     ]
-
-    const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard.gif", 59)
-    const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise.gif", 59)
+    //crear un atributo para el sprite de espalda
+    const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard_back.png", 59)
+    const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise.png", 59)
 
     const [message, setMessage] = useState(`¿Qué hará ${playerPokemon.name}?`)
 

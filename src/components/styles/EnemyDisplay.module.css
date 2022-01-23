@@ -1,4 +1,4 @@
-.enemyContainer {
+/* .enemyContainer {
     position: relative;
     top: 10px;
     width: 100%;
@@ -6,20 +6,21 @@
     align-items:flex-start;
     justify-content: space-around;
     flex-direction: row-reverse;
-}
+    
+} */
 
-.imageContainer {
+/* .imageContainer {
     width: 30%;
     margin-left: 12%;
-}
+} */
 
-.enemyImg {
+/* .enemyImg {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     width: 100%;
-}
+} */
 
-.enemyPlatform {
+/* .enemyPlatform {
     position: absolute;
     top: 62%;
     right: 3%;
@@ -28,9 +29,9 @@
     border-radius: 100%;
     border: 5px solid #9FA8AD;
     background-color: #D4DDDA;
-}
+} */
 
-.enemyContainerInfo {
+/* .enemyContainerInfo {
     background-color: #6A725D;
     width: 45%;
     padding: 5px;
@@ -41,25 +42,24 @@
                 inset -2px -2px 2px #AEB49E,
                 2px 2px 2px #E6F4E1,
                 -2px -2px 2px #E6F4E1;
-}
+} */
 
-.enemyInfo {
+/* .enemyInfo {
     display: flex;
     justify-content:space-between;
-}
+} */
 
-.enemyHealt {
+/* .enemyHealt {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-}
+} */
 
-.enemyHealtBar {
+/* .enemyHealtBar {
     width: 60%;
-    margin-right: 5px;
-}
+} */
 
-.enemyHp {
+/* .enemyHp {
     margin-right: 5px;
     font-size: small;
-}
+} */
