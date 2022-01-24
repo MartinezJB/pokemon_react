@@ -11,14 +11,14 @@
                 inset -2px -2px 5px #E87A7B;
 }
 
-ul {
+/* ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-}
-li{
+} */
+/* li{
     margin: 1rem;
-}
+} */
 
 .buttonsContainer {
     display: flex;

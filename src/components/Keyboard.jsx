@@ -58,12 +58,12 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
     },[turnDone])
   
     return (
-        <div className='h-2/5'>
+        <div className="">
         <div className={styles.keyboardContainer}>
             
-            <ul className={styles.movesContainer}>
+            <ul className="bg-red-600 px-2 shadow-red-400 shadow-[inset_2px_2px_5px,inset_-2px_-2px_5px] grid grid-cols-2 grid-rows-2">
                 {player.movements.map((move)=>(
-                    <li key={move.id}>
+                    <li className='m-4' key={move.id}>
                         <Move move={move} setTurnDone={setTurnDone} setMove={setMove} />
                     </li>
                 ))}

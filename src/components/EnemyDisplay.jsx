@@ -15,7 +15,7 @@ export default function EnemyDisplay({ enemy }) {
             </div>
 
             {/* Info */}
-            <div className="w-6/12 bg-stone-500 px-2 py-1 border-slate-800 border-2 rounded-r-lg shadow-border">
+            <div className="w-6/12 bg-stone-500 px-2 py-1 border-slate-800 border-2 rounded-r-lg shadow-border shadow-stone-300">
                 <div className="flex justify-between text-lg">
                     {/* Name */}
                     <p>{name}</p>

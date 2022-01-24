@@ -11,7 +11,7 @@ export default function PlayerDisplay({ player }) {
                 <div className="absolute bottom-[-15%] w-full h-4/6 bg-slate-200 border-slate-400 border-4 rounded-[100%]"></div>
             </div>
 
-            <div className="w-6/12 bg-stone-500 px-2 py-1 border-slate-800 border-2 rounded-l-lg shadow-border z-20">
+            <div className="w-6/12 bg-stone-500 px-2 py-1 border-slate-800 border-2 rounded-l-lg z-20 shadow-border shadow-stone-300">
                 <div className="flex justify-between text-lg">
                     {/* Name */}
                     <p>{player.name}</p>
