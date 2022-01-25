@@ -4,7 +4,7 @@ import React from "react";
 export default function Move({ move, setTurnDone, setMove }) {
   
   return (
-    <div className="px-2 py-1 bg-stone-200 rounded-xl border-2 border-slate-400 shadow-button cursor-pointer hover:scale-105 transition-transform" onClick={()=>{setMove(move); setTurnDone(true)}}>
+    <div className="px-2 py-1 bg-stone-200 rounded-xl border-2 border-slate-400 shadow-lg cursor-pointer hover:scale-105 transition-transform" onClick={()=>{setMove(move); setTurnDone(true)}}>
 
         <h3 className="mb-2 font-medium">{move.name}</h3>
         

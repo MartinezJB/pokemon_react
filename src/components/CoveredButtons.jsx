@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/CoveredButtons.module.css'
+//import styles from './styles/CoveredButtons.module.css'
 
 
 export default function CoveredButtons({ covered }) {
@@ -8,7 +8,7 @@ export default function CoveredButtons({ covered }) {
     }
     
     return (
-        <div className={styles.coveredButtons} >
+        <div className="absolute bottom-0 w-full h-2/5 bg-stone-800/75" >
             
         </div>
     )
