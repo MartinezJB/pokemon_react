@@ -1,11 +1,10 @@
 import React from 'react';
-//import styles from './styles/EnemyDisplay.module.css';
-// TODO: hay que cambiar los width para que coincidan todos con columna 12. el module ya no sirve
+
 export default function EnemyDisplay({ enemy }) {
     let { name, lvl, max_life, actual_life, urlImg } = enemy;
 
     return (
-        <div className="relative flex flex-row-reverse top-3 items-start justify-between">
+        <div className="relative flex flex-row-reverse top-3 items-start justify-between h-2/5">
             {/* Image */}
             <div className="w-5/12 scale-90 mx-auto">
                 {/* Sprite */}

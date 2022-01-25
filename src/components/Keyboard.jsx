@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import CoveredButtons from './CoveredButtons';
 import Move from './Move';
-//import styles from './styles/Keyboard.module.css'
 
 export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDone, setTurnDone, setMessage}) {
 
@@ -59,9 +58,9 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
   
     return (
         <Fragment>
-        <div className="text-center w-full">
+        <div className="text-center w-full h-2/5">
             
-            <ul className="bg-red-600 px-2 shadow-red-400 shadow-[inset_2px_2px_5px,inset_-2px_-2px_5px] grid grid-cols-2 grid-rows-2">
+            <ul className="bg-red-600 px-2 shadow-red-400 shadow-[inset_2px_2px_5px,inset_-2px_-2px_5px] grid grid-cols-2 grid-rows-2 h-3/4">
                 {player.movements.map((move)=>(
                     <li className='m-4' key={move.id}>
                         <Move move={move} setTurnDone={setTurnDone} setMove={setMove} />
@@ -69,7 +68,7 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
                 ))}
             </ul>
             
-            <div className="bg-red-800 py-2">
+            <div className="bg-red-800 py-2 h-1/4">
                 <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-2 rounded-t-lg shadow-lg hover:scale-105">Exit</button>
                 <button className="bg-red-600 border-red-900 border-2 text-4xl text-white px-8 py-2 rounded-t-2xl shadow-lg hover:scale-105">+</button>
                 <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-2 rounded-t-lg shadow-lg hover:scale-105">Bag</button>
@@ -77,7 +76,7 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
 
         </div>
 
-            <CoveredButtons covered={true}/> {/* cambiar a covered */}
+            <CoveredButtons covered={covered}/>
         
         </Fragment>
     )

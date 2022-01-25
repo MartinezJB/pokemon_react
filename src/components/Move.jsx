@@ -1,5 +1,4 @@
 import React from "react";
-// import styles from './styles/Move.module.css';
 
 export default function Move({ move, setTurnDone, setMove }) {
   

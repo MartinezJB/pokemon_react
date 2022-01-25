@@ -1,10 +1,9 @@
 import React from 'react';
-//import styles from './styles/PlayerDisplay.module.css';
 
 export default function PlayerDisplay({ player }) {
 
     return ( 
-        <div className="relative flex items-center justify-between">
+        <div className="relative flex items-center justify-between h-2/5">
 
             <div className="w-5/12 scale-125">
                 <img className="relative w-full z-10 animate-bounce" src={player.urlImg} alt={player.name} />

@@ -1,6 +1,4 @@
-import React from 'react'
-//import styles from './styles/CoveredButtons.module.css'
-
+import React from 'react';
 
 export default function CoveredButtons({ covered }) {
     if(!covered) {

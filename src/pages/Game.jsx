@@ -31,9 +31,9 @@ export default function Game() {
 
 
     return (
-        <Fragment>
+        <div className='h-screen overflow-hidden'>
             <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} />
             <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} />
-        </Fragment>
+        </div>
     )
 }
