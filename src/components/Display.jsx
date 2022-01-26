@@ -6,7 +6,7 @@ import TextDisplay from './TextDisplay';
 
 export default function Display({ enemy, player, message }) {
     return (
-        <div className="bg-gradient-to-b from-sky-700 via-green-500 to-green-700 h-3/5">
+        <div className="bg-gradient-to-b from-sky-700 via-green-500 to-green-700 h-3/5 lg:h-[90%] flex flex-col">
             <EnemyDisplay enemy={enemy} />
             <PlayerDisplay player={player} />
             <TextDisplay mensaje={message} />

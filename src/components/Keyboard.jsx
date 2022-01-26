@@ -58,25 +58,25 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
   
     return (
         <Fragment>
-        <div className="text-center w-full h-2/5">
+        <div className="relative z-10 text-center w-full h-2/5">
             
-            <ul className="bg-red-600 px-2 shadow-red-400 shadow-[inset_2px_2px_5px,inset_-2px_-2px_5px] grid grid-cols-2 grid-rows-2 h-3/4">
+            <ul className="bg-red-600 p-2 shadow-red-400 shadow-[inset_2px_2px_5px,inset_-2px_-2px_5px] grid grid-cols-2 grid-rows-2 h-3/4 lg:bg-transparent lg:absolute lg:shadow-none lg:right-0 lg:top-[-100%] lg:flex lg:flex-col lg:w-4/12">
                 {player.movements.map((move)=>(
-                    <li className='m-4' key={move.id}>
+                    <li className='m-2 my-auto lg:m-1' key={move.id}>
                         <Move move={move} setTurnDone={setTurnDone} setMove={setMove} />
                     </li>
                 ))}
             </ul>
-            
-            <div className="bg-red-800 py-2 h-1/4">
-                <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-2 rounded-t-lg shadow-lg hover:scale-105">Exit</button>
-                <button className="bg-red-600 border-red-900 border-2 text-4xl text-white px-8 py-2 rounded-t-2xl shadow-lg hover:scale-105">+</button>
-                <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-2 rounded-t-lg shadow-lg hover:scale-105">Bag</button>
+            {/* TODO: poner bien los botones de ataque */}
+            <div className="bg-red-800 h-1/4 flex justify-center items-end">
+                <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-1 rounded-t-lg shadow-lg hover:scale-105">Exit</button>
+                <button className="bg-red-600 border-red-900 border-2 text-4xl text-white px-8 py-1 rounded-t-2xl shadow-lg hover:scale-105">+</button>
+                <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-1 rounded-t-lg shadow-lg hover:scale-105">Bag</button>
             </div>
 
+            <CoveredButtons covered={covered}/>
         </div>
 
-            <CoveredButtons covered={covered}/>
         
         </Fragment>
     )

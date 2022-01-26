@@ -6,8 +6,12 @@ export default function CoveredButtons({ covered }) {
     }
     
     return (
-        <div className="absolute bottom-0 w-full h-2/5 bg-stone-800/75" >
-            
+        <div className="absolute bottom-0 w-full h-full bg-stone-800/75 z-10 lg:w-4/12 lg:top-[-100%] lg:p-2 lg:right-0 lg:bg-transparent" >
+            <div className="hidden lg:block lg:h-10 lg:bg-stone-800/75  lg:rounded-xl lg:m-1 lg:mx-1"></div>
+            <div className="hidden lg:block lg:h-10 lg:bg-stone-800/75  lg:rounded-xl lg:m-2 lg:mx-1"></div>
+            <div className="hidden lg:block lg:h-10 lg:bg-stone-800/75  lg:rounded-xl lg:m-2 lg:mx-1"></div>
+            <div className="hidden lg:block lg:h-10 lg:bg-stone-800/75  lg:rounded-xl lg:m-2 lg:mx-1"></div>
+            <div className="hidden lg:block lg:fixed lg:w-full lg:h-[10%] lg:bg-stone-800/75 lg:bottom-0 lg:left-0"></div>
         </div>
     )
 }
