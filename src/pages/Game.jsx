@@ -29,11 +29,13 @@ export default function Game() {
     const [gameOver, setGameOver] = useState(false);
     const [turnDone, setTurnDone] = useState(false);
 
+    const [playerAttacking, setPlayerAttacking] = useState(false);
+    const [enemyAttacking, setEnemyAttacking] = useState(false)
 
     return (
         <div className='h-screen overflow-hidden'>
-            <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} />
-            <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} />
+            <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} playerAttacking={playerAttacking} enemyAttacking={enemyAttacking}/>
+            <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} setPlayerAttacking={setPlayerAttacking} setEnemyAttacking={setEnemyAttacking} />
         </div>
     )
 }

@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function PlayerDisplay({ player }) {
+export default function PlayerDisplay({ player, playerAttacking }) {
 
+    const [animateAttack, setAnimateAttack] = useState("");
+
+    useEffect(()=>{
+        setAnimateAttack(playerAttacking ? " animate-attack-player" : "")
+    },[playerAttacking])
+    
     return ( 
         <div className="relative flex items-center justify-between h-2/5">
 
             <div className="w-5/12 scale-125 sm:w-4/12 md:w-3/12 mx-auto lg:ml-[10%] lg:mt-[-10%]">
-                <img className="relative w-full z-10 animate-bounce" src={player.urlImgBack} alt={player.name} />
+                <img className={"relative w-full z-10 animate-bounce" + animateAttack} src={player.urlImgBack} alt={player.name} />
                 <div className="absolute bottom-[-15%] w-full h-4/6 bg-slate-200 border-slate-400 border-4 rounded-[100%]"></div>
             </div>
 
