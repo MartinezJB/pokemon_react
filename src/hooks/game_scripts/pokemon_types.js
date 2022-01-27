@@ -8,10 +8,11 @@ class Type {
         return this._name;
     }
     isWeakAgainst(type) {
-        return type === this.weak;
+        return type.name === this.weak;
+        
     };
     isStrongAgainst(type) {
-        return type === this.strong;
+        return type.name === this.strong;
     }
 }
 
@@ -20,7 +21,7 @@ class Type {
  ********************************************************************/
 
 const fire = new Type("fire", "grass", "water");
-const water = new Type("water", "fire", "planta");
+const water = new Type("water", "fire", "grass");
 const grass = new Type("grass", "water", "fire");
 const normal = new Type("normal", "", "fighting");
 const fighting = new Type("fighting", "normal", "flying");

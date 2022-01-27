@@ -27,16 +27,21 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
         
     }
 
-    const attack = (attacker, victim, delay) => {
+    const attack = (attacker, victim, delay, isRandomAttack = false) => {
         if(attacker.actual_life < 1 || victim.actual_life < 1) {
             return null
         }
         return new Promise ( (res, rej) => {
             setTimeout(()=>{
-                setMessage(`${attacker.name} usó ${move.name}`);
+                let movement = move
+                if(isRandomAttack) {
+                    movement = attacker.movements[Math.floor(Math.random() * 4)]
+                    
+                }
+                setMessage(`${attacker.name} usó ${movement.name}`);
     
                 setTimeout(()=>{
-                    res(setMessage(`${attacker.attackEnemy(victim, move)}`))
+                    res(setMessage(`${attacker.attackEnemy(victim, movement)}`))
                 }, 2000)
             }, delay)
         
@@ -45,12 +50,12 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
     //TODO: hacer que el enemigo haga un ataque aleatorio, esto en el codigo del enemigo
   
     useEffect (async ()=>{
-        //console.log("roto")
+        console.log("roto")
         if(turnDone){
-            // console.log("dentro del if")
+            console.log("dentro del if")
             setCovered(true);
             await attack(player, enemy, 0);
-            await attack(enemy, player, 2000);
+            await attack(enemy, player, 2000, true);
             finishTurn();
         }
         
@@ -67,7 +72,6 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
                     </li>
                 ))}
             </ul>
-            {/* TODO: poner bien los botones de ataque */}
             <div className="bg-red-800 h-1/4 flex justify-center items-end">
                 <button className="bg-red-600 border-red-900 border-2 text-lg text-white px-4 py-1 rounded-t-lg shadow-lg hover:scale-105">Exit</button>
                 <button className="bg-red-600 border-red-900 border-2 text-4xl text-white px-8 py-1 rounded-t-2xl shadow-lg hover:scale-105">+</button>

@@ -11,9 +11,9 @@ export class Movement {
 
     harmTo(enemy) {
         if(enemy.type.isWeakAgainst(this.type)){
-            return this.damage * 1.15;
+            return this.damage * 1.35;
         }else if(enemy.type.isStrongAgainst(this.type)){
-            return this.damage * 0.60;
+            return this.damage * 0.65;
         }else{
             return this.damage;
         }

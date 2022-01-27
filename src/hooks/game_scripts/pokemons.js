@@ -1,10 +1,11 @@
 export class Pokemon {
-    constructor(name, type, hp, damagePoints, defensePoints, movements = [], image, lvl = 1){
+    constructor(name, type, hp, damagePoints, defensePoints, movements = [], imageFront, imageBack, lvl = 1){
         this.name = name;
         this.type = type;
         this.max_life = hp;
         this.actual_life = this.max_life;
-        this.urlImg = image;
+        this.urlImgFront = imageFront;
+        this.urlImgBack = imageBack
         this.damagePoints = damagePoints;
         this.defensePoints = defensePoints;
         this.movements = movements;
@@ -21,13 +22,14 @@ export class Pokemon {
     }
 
     sufferAttack(attack){
-        if(attack.harmTo(this) >= this.actual_life){
+        let finalHarm = Math.floor(attack.harmTo(this))
+        if(finalHarm >= this.actual_life){
             this.actual_life = 0;
             return this.name + " está fuera de combate."
         }
         else{
-            this.actual_life -= attack.harmTo(this);
-            return this.name + " ha sufrido " + attack.harmTo(this) + " puntos de daño."
+            this.actual_life -= finalHarm;
+            return this.name + " ha sufrido " + finalHarm + " puntos de daño."
         }
     }
 }
