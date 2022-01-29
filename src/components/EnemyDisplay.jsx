@@ -4,7 +4,7 @@ export default function EnemyDisplay({ enemy, enemyAttacking }) {
     const [enemyAnimateAttack, setEnemyAnimateAttack] = useState("");
 
     useEffect(()=>{
-        setEnemyAnimateAttack(enemyAttacking ? " animate-attack-enemy" : "")
+        setEnemyAnimateAttack(enemyAttacking ? " animate-attack-enem" : "")
     },[enemyAttacking])
     
     return (

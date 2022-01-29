@@ -24,7 +24,7 @@ module.exports = {
       },
       animation: {
         'attack-player': 'player 1s ease-in alternate infinite',
-        'attack-enemy': 'enemy 1s ease-in alternate infinite',
+        'attack-enem': 'enemy 1s ease-in alternate infinite',
       }
     },
   },
