@@ -1,12 +1,10 @@
 export class Movement {
-    static id = 0;
     constructor(name, type, damage, pp) {
         this.name = name;
         this.type = type;
         this.damage = damage;
         this.max_pp = pp;
         this.actual_pp = pp;
-        this.id = Movement.id ++
     }
 
     harmTo(enemy) {

@@ -13,6 +13,7 @@ export default function App() {
     <Routes>
       <Route path="*" element={<PokemonSelector />} />
       <Route path="/game/:player_id/:enemy_id" element={<Game />} />
+      <Route path="/game" element={<Game />} />
       {/* <Route
         path="*"
         element={

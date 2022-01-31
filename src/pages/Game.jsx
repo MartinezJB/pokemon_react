@@ -1,18 +1,27 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Display from '../components/Display'
 import Keyboard from '../components/Keyboard'
 import { usePokemon } from '../hooks/usePokemon'
 import { useMove } from '../hooks/useMove'
+import { pokeApiFetchById } from '../utils/pokeApiFetchById'
+import { pokeApiAdapterLocalById } from '../utils/pokeApiAdapterLocalById'
 
+import { Movement } from "../hooks/game_scripts/movements"
 
 export default function Game() {
 
-    const id = useParams();
-    console.log(id.player_id);
+    const pokemonsId = useParams();
+
+    
+
+    useEffect (async()=>{
+        let playerLocal = await pokeApiAdapterLocalById(pokemonsId.player_id);
+        console.log(playerLocal);
+    }, []);
 
     const playerMovements = [
-        useMove("Flamethrower", "fire", 50, 25),
+        new Movement("move clase", "fire", 34, 10),
         useMove("Steel tail", "steel", 50, 15),
         useMove("Mega punch", "normal", 50, 10),
         useMove("Tornado wings", "flying", 50, 30)
@@ -27,7 +36,6 @@ export default function Game() {
     //crear un atributo para el sprite de espalda
     const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard_front.png", "./charizard_back.png", 59)
     const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise_front.png", "./blastoise_back.png", 59)
-
     const [message, setMessage] = useState(`¿Qué hará ${playerPokemon.name}?`)
 
     const [gameOver, setGameOver] = useState(false);
