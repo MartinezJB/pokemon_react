@@ -3,7 +3,7 @@ import PokemonChoice from '../components/PokemonChoice';
 import SelectorDisplay from "../components/SelectorDisplay";
 import StartButton from '../components/StartButton';
 
-export default function PokemonSelector() {
+export default function PokemonSelector({}) {
     const [playerChoice, setPlayerChoice] = useState({});
     const [enemyChoice, setEnemyChoice] = useState({});
 

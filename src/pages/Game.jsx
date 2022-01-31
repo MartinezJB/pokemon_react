@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Display from '../components/Display'
 import Keyboard from '../components/Keyboard'
 import { usePokemon } from '../hooks/usePokemon'
@@ -6,6 +7,9 @@ import { useMove } from '../hooks/useMove'
 
 
 export default function Game() {
+
+    const id = useParams();
+    console.log(id.player_id);
 
     const playerMovements = [
         useMove("Flamethrower", "fire", 50, 25),
