@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pokemon } from "./game_scripts/pokemons";
 import { typeAdapter } from "./game_scripts/typeAdapter";
 

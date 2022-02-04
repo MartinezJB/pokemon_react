@@ -6,13 +6,13 @@ class Type {
     }
     get name() {
         return this._name;
-    }
+    } 
     isWeakAgainst(type) {
-        return type.name === this.weak;
+        return type === this.weak;
         
     };
     isStrongAgainst(type) {
-        return type.name === this.strong;
+        return type === this.strong;
     }
 }
 

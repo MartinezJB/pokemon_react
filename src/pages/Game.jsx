@@ -10,14 +10,15 @@ import { pokeApiAdapterLocalById } from '../utils/pokeApiAdapterLocalById'
 import { Movement } from "../hooks/game_scripts/movements"
 
 export default function Game() {
-
-    const pokemonsId = useParams();
-
     
+    const { player_id, enemy_id } = useParams();
+
+    const [playerPokemon, setPlayerPokemon] = useState({});
+    const [enemyPokemon, setEnemyPokemon] = useState({});
 
     useEffect (async()=>{
-        let playerLocal = await pokeApiAdapterLocalById(pokemonsId.player_id);
-        console.log(playerLocal);
+        setPlayerPokemon(await pokeApiAdapterLocalById(player_id));
+        setEnemyPokemon(await pokeApiAdapterLocalById(enemy_id));
     }, []);
 
     const playerMovements = [
@@ -34,20 +35,25 @@ export default function Game() {
         useMove("Water gun", "water", 50, 30)
     ]
     //crear un atributo para el sprite de espalda
-    const playerPokemon = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard_front.png", "./charizard_back.png", 59)
-    const enemyPokemon = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise_front.png", "./blastoise_back.png", 59)
-    const [message, setMessage] = useState(`¿Qué hará ${playerPokemon.name}?`)
+    const playerPokemonNoVa = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard_front.png", "./charizard_back.png", 59)
+    const enemyPokemonNoVa = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise_front.png", "./blastoise_back.png", 59)
+    const [message, setMessage] = useState("");
+    
 
     const [gameOver, setGameOver] = useState(false);
     const [turnDone, setTurnDone] = useState(false);
 
     const [playerAttacking, setPlayerAttacking] = useState(false);
-    const [enemyAttacking, setEnemyAttacking] = useState(false)
+    const [enemyAttacking, setEnemyAttacking] = useState(false);
 
     return (
         <div className='h-screen overflow-hidden'>
-            <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} playerAttacking={playerAttacking} enemyAttacking={enemyAttacking}/>
-            <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} setPlayerAttacking={setPlayerAttacking} setEnemyAttacking={setEnemyAttacking} />
+            {Object.keys(playerPokemon).length === 0 || Object.keys(enemyPokemon).length === 0 ? (<div>Cargando contenido...</div>):(
+                <Fragment>
+                    <Display enemy={enemyPokemon} player={playerPokemon} itsGameOver={gameOver} message={message} playerAttacking={playerAttacking} enemyAttacking={enemyAttacking}/>
+                    <Keyboard player={playerPokemon} enemy={enemyPokemon} gameOver={gameOver} setGameOver={setGameOver} turnDone={turnDone} setTurnDone={setTurnDone} setMessage={setMessage} setPlayerAttacking={setPlayerAttacking} setEnemyAttacking={setEnemyAttacking} />
+                </Fragment>
+            )}
         </div>
     )
 }
