@@ -7,7 +7,8 @@ import { useMove } from "../hooks/useMove"
 export async function pokeApiAdapterLocalById(pokeApiId) {
     let pokeApi = await pokeApiFetchById(pokeApiId);
     //console.log(pokeApi);
-    let type = typeAdapter(pokeApi.types[0].type.name);
+    let type = await typeAdapter(pokeApi.types[0].type);
+    //console.log(type);
 
     let movements = [
         await movementsApiAdapterLocal(pokeApi.moves[0].move),
@@ -22,7 +23,7 @@ export async function pokeApiAdapterLocalById(pokeApiId) {
         pokeApi.stats[0].base_stat,
         pokeApi.stats[1].base_stat,
         pokeApi.stats[2].base_stat,
-        movements, //cambiar a la lista de movimientos principales y hacer un adapter de movimientos
+        movements,
         pokeApi.sprites.front_default,
         pokeApi.sprites.back_default,
         59 // cambiar por un nivel mas natural (pensar como)

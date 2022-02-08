@@ -15,14 +15,15 @@ export class Pokemon {
     attackEnemy(enemy, attack){
         if(attack.actual_pp > 0){
             attack.actual_pp -= 1;
-            return enemy.sufferAttack(attack);
+            return enemy.sufferAttack(attack, this.damagePoints);
         }else{
             return "No quedan pp para este movimiento";
         }
     }
 
-    sufferAttack(attack){
-        let finalHarm = Math.floor(attack.harmTo(this))
+    sufferAttack(attack, damPointEnemy){
+        let damage = attack.harmTo(this) + damPointEnemy - this.defensePoints;
+        let finalHarm = Math.floor(damage > 0 ? attack.harmTo(this) + damPointEnemy - this.defensePoints : 1)
         if(finalHarm >= this.actual_life){
             this.actual_life = 0;
             return this.name + " está fuera de combate."

@@ -21,22 +21,6 @@ export default function Game() {
         setEnemyPokemon(await pokeApiAdapterLocalById(enemy_id));
     }, []);
 
-    const playerMovements = [
-        new Movement("move clase", "fire", 34, 10),
-        useMove("Steel tail", "steel", 50, 15),
-        useMove("Mega punch", "normal", 50, 10),
-        useMove("Tornado wings", "flying", 50, 30)
-    ]
-
-    const enemyMovements = [
-        useMove("Hidro bomb", "water", 50, 25),
-        useMove("Tail", "normal", 50, 15),
-        useMove("Mega punch", "normal", 50, 10),
-        useMove("Water gun", "water", 50, 30)
-    ]
-    //crear un atributo para el sprite de espalda
-    const playerPokemonNoVa = usePokemon("Charizard", "fire", 150, 50, 40, playerMovements, "./charizard_front.png", "./charizard_back.png", 59)
-    const enemyPokemonNoVa = usePokemon("Blastoise", "water", 150, 50, 40,enemyMovements, "./blastoise_front.png", "./blastoise_back.png", 59)
     const [message, setMessage] = useState("");
     
 
