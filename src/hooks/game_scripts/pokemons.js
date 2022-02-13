@@ -22,8 +22,10 @@ export class Pokemon {
     }
 
     sufferAttack(attack, damPointEnemy){
-        let damage = attack.harmTo(this) + damPointEnemy - this.defensePoints;
-        let finalHarm = Math.floor(damage > 0 ? attack.harmTo(this) + damPointEnemy - this.defensePoints : 1)
+        let damage = (((this.lvl * 2 / 5) + 2) * attack.damage * damPointEnemy / 50) / this.defensePoints;
+        //fuente de la formula https://www.pokexperto.net/index2.php?seccion=mecanica/ataque
+        let finalHarm = Math.floor(damage > 0 ? damage * attack.harmTo(this) : 1)
+
         if(finalHarm >= this.actual_life){
             this.actual_life = 0;
             return this.name + " está fuera de combate."

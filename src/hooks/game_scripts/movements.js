@@ -9,11 +9,11 @@ export class Movement {
 
     harmTo(enemy) {
         if(enemy.type.isWeakAgainst(this.type)){
-            return this.damage * 1.35;
+            return 1.40;
         }else if(enemy.type.isStrongAgainst(this.type)){
-            return this.damage * 0.65;
+            return 0.60;
         }else{
-            return this.damage;
+            return 1;
         }
     }
 }
