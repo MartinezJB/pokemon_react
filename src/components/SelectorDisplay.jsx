@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PokemonCard from './PokemonCard';
-
-import pokemon_select from "../pages/examples/pokemon_select.json";
 import { pokeApiFetchByUrl } from '../utils/pokeApiFetchByUrl';
 import { Fragment } from 'react/cjs/react.development';
 
@@ -19,13 +17,14 @@ export default function SelectorDisplay({ setPlayerChoice, setEnemyChoice, playe
         setPrevPage(pokes.previous);
     }
     useEffect(()=>{
-        changePage("https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0")
-    }, []);
-    
+        changePage("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0")
+    }, []);  
+
     return (
       
         <Fragment>
-        <ul className='w-max mx-auto h-2/6 overflow-auto border-2 border-stone-700'>
+            
+        <ul className='w-3/4 lg:w-2/4 mx-auto h-1/3 overflow-auto border-2 border-stone-700'>
             {
                 pokeApiList.map((e)=>(
                     <li key={e.name}>
@@ -39,8 +38,10 @@ export default function SelectorDisplay({ setPlayerChoice, setEnemyChoice, playe
                 ))
             }
         </ul>
-        <button onClick={async()=>await changePage(prevPage)} disabled={prevPage === null}>Prev</button>
-        <button onClick={async()=>await changePage(nextPage)} disabled={nextPage === null}>Next</button>
+        <div className='w-3/4 mx-auto flex justify-around'>
+            <button onClick={async()=>await changePage(prevPage)} disabled={prevPage === null} className='bg-yellow-300 px-2 rounded-b-lg'>Prev</button>
+            <button onClick={async()=>await changePage(nextPage)} disabled={nextPage === null} className='bg-yellow-300 px-2 rounded-b-lg'>Next</button>
+        </div>
         </Fragment>
       
   );

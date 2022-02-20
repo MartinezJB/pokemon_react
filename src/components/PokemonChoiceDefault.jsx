@@ -11,9 +11,9 @@ export default function PokemonChoiceDefault({setChoice}) {
     };
 
     return(
-    <div className="bg-stone-400">
-      <p>Elige un pokemon</p>
-      <img className='h-24' src="./pokemon_select_default.png" />
+    <div className="bg-stone-400 w-1/4 text-center rounded">
+      <p>Choose</p>
+      <img className='h-20 mx-auto' src="./pokemon_select_default.png" alt="default" />
       <button onClick={()=>selectRandomChoice()}>Random</button>
     </div>
     )

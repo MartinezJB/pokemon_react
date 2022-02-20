@@ -26,7 +26,7 @@ export async function pokeApiAdapterLocalById(pokeApiId) {
         movements,
         pokeApi.sprites.front_default,
         pokeApi.sprites.back_default,
-        59 // cambiar por un nivel mas natural (pensar como)
+        30 // cambiar por un nivel mas natural (pensar como)
     );
 }
 

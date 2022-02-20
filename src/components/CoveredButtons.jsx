@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayAgainBtn from './PlayAgainBtn';
+import ReturnBtn from './ReturnBtn';
 
 export default function CoveredButtons({ covered, setGameOver, gameOver }) {
     if(!covered) {
@@ -14,7 +14,7 @@ export default function CoveredButtons({ covered, setGameOver, gameOver }) {
             <div className="hidden lg:block lg:h-10 lg:bg-stone-800/75  lg:rounded-xl lg:m-2 lg:mx-1"></div>
             <div className="hidden lg:block lg:h-10 lg:bg-stone-800/75  lg:rounded-xl lg:m-2 lg:mx-1"></div>
             <div className="hidden lg:block lg:fixed lg:w-full lg:h-[10%] lg:bg-stone-800/75 lg:bottom-0 lg:left-0"></div>
-            <PlayAgainBtn setGameOver={setGameOver} gameOver={gameOver}/>
+            <ReturnBtn setGameOver={setGameOver} gameOver={gameOver}/>
         </div>
     )
 }
