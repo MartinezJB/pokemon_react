@@ -1,7 +1,7 @@
 # PokeReact
 
 PokeReact es un proyecto personal que clona las mecánicas de combate de la franquicia "Pokémon" utilizando el framework React.js y TailWind CSS.
-Puede ver el deploy del proyecto en [PokeReact](link)
+Puede ver el deploy del proyecto en [PokeReact](https://poke-react-jb.netlify.app/)
 
 ## ¿Cómo funciona?
 
