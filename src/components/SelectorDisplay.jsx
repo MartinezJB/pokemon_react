@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import PokemonCard from './PokemonCard';
 import { pokeApiFetchByUrl } from '../utils/pokeApiFetchByUrl';
-import { Fragment } from 'react/cjs/react.development';
 
 
 export default function SelectorDisplay({ setPlayerChoice, setEnemyChoice, playerChoice, enemyChoice }) {

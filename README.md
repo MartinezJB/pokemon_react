@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# PokeReact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PokeReact es un proyecto personal que clona las mecánicas de combate de la franquicia "Pokémon" utilizando el framework React.js y TailWind CSS.
+Puede ver el deploy del proyecto en [PokeReact](link)
 
-## Available Scripts
+## ¿Cómo funciona?
 
-In the project directory, you can run:
+Se seleccionan 2 criaturas del listado de pokémons traidos de la API pública [PokeApi](https://pokeapi.co/) para ser usados en combate.
+Ya en la pelea se efectuan ataques (por el momento solo se usan ataques de daño, aún no está implementado un sistema de modificación de estados de un pokémon) y hacen distinto daño dependiendo el tipo, daño, defensa y nivel del pokémon y el ataque.
+Puede ver esta fórmula más a detalle [aquí](https://www.pokexperto.net/index2.php?seccion=mecanica/formula_ataque_rze#:~:text=1.,2)%20*%20STAB%20*%20Efec.).
+El primer pokémon que queda en 0 de vida pierde y se vuelve al apartado de selección de pokémon para realizar otro combate si así se desea.
 
-### `npm start`
+## Instalación:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `npm i`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para instalar los paquetes necesarios de Node.js
 
-### `npm test`
+### `npm install -D tailwindcss`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instala TailWind CSS en nuestro proyecto.
 
-### `npm run build`
+### `npm install react-router-dom@6`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React dom para hacer el enrutamiento hacia las distintas páginas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Créditos y licencias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-© 2022 Pokémon. © 1995–2022 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon, el nombre de los personajes de Pokémon, Nintendo Switch, Nintendo 3DS, Nintendo DS, Wii, Wii U, y WiiWare son marcas registradas de [Nintendo](https://www.pokemon.com/el/informacion-legal/).
 
-### `npm run eject`
+-[PokeApi](https://pokeapi.co/): La base de datos pública utilizada en el proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-[Pokexperto](https://www.pokexperto.net/index2.php?seccion=mecanica/formula_ataque_rze#:~:text=1.,2)%20*%20STAB%20*%20Efec.): para el análisis de la formula de ataque.

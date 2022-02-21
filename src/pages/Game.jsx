@@ -1,13 +1,8 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import Display from '../components/Display'
-import Keyboard from '../components/Keyboard'
-import { usePokemon } from '../hooks/usePokemon'
-import { useMove } from '../hooks/useMove'
-import { pokeApiFetchById } from '../utils/pokeApiFetchById'
-import { pokeApiAdapterLocalById } from '../utils/pokeApiAdapterLocalById'
-
-import { Movement } from "../hooks/game_scripts/movements"
+import React, { Fragment, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Display from '../components/Display';
+import Keyboard from '../components/Keyboard';
+import { pokeApiAdapterLocalById } from '../utils/pokeApiAdapterLocalById';
 
 export default function Game() {
     

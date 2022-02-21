@@ -52,10 +52,8 @@ export default function Keyboard({ player, enemy, gameOver, setGameOver, turnDon
     }
   
     useEffect (async ()=>{
-        // console.log("roto")
         setMessage(`¿Qué hará ${player.name}?`)
         if(turnDone){
-            // console.log("dentro del if")
             setCovered(true);
             await attack(player, enemy, setPlayerAttacking, 0,);
             await attack(enemy, player, setEnemyAttacking, 2000, true);
