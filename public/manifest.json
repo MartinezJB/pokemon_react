@@ -2,7 +2,11 @@
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
-    
+    {
+      "src": "pokeball_icon.png",
+      "type": "image/png",
+      "sizes": "200x200"
+    }
   ],
   "start_url": ".",
   "display": "standalone",
