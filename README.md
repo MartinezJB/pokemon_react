@@ -10,20 +10,6 @@ Ya en la pelea se efectuan ataques (por el momento solo se usan ataques de daño
 Puede ver esta fórmula más a detalle [aquí](https://www.pokexperto.net/index2.php?seccion=mecanica/formula_ataque_rze).
 El primer pokémon que queda en 0 de vida pierde y se vuelve al apartado de selección de pokémon para realizar otro combate si así se desea.
 
-## Instalación:
-
-### `npm i`
-
-Para instalar los paquetes necesarios de Node.js
-
-### `npm install -D tailwindcss`
-
-Instala TailWind CSS en nuestro proyecto.
-
-### `npm install react-router-dom@6`
-
-React dom para hacer el enrutamiento hacia las distintas páginas.
-
 ## Créditos y licencias
 
 - © 2022 Pokémon. © 1995–2022 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon, el nombre de los personajes de Pokémon, Nintendo Switch, Nintendo 3DS, Nintendo DS, Wii, Wii U, y WiiWare son marcas registradas de [Nintendo](https://www.pokemon.com/el/informacion-legal/).
